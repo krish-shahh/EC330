@@ -68,7 +68,7 @@ void generateGrid(int N) {
         cout << "+" << endl;
 
         for (int j = 0; j < MAX_GRID_SIZE; j++) {
-            cout << "| " << array[i][j] << " "; // Vertical divider and grid element
+            cout << "| " << array[i][j] << " "; 
         }
         cout << "|" << endl;
     }
