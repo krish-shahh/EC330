@@ -1,5 +1,9 @@
 // Krish Shah, U75802512, kshah26@bu.edu
 
+/* Course of Action:
+    - 
+*/
+
 #include <iostream>
 #include <stack>
 #include <string>
@@ -47,3 +51,5 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
+// g++ -std=c++17 Problem4.cpp -o Problem4
