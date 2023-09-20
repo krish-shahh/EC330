@@ -1,14 +1,18 @@
 // Krish Shah, U75802512, kshah26@bu.edu
 
-/*
+/* Course of Action:
+    - 
+*/
+
+/* 
+
 Part A:
 
 The algorithm for creating the grid involves populating a two-dimensional array with 'X' and 'O' characters 
 and then printing the grid with clear separators. For any given positive integer N, the algorithm calculates the grid size, 
-initializes the grid with dashes (based on Gradescrope autograder according to Piazza), places 'X' characters diagonally, and positions 'O' characters based on whether N is even or odd. 
-The final step prints the grid (usually I would do it neatly structured with vertical and horizontal dividers but it seems like the autograder in Gradescope doesn't like that according to Piazza).
+initializes the grid with spaces, places 'X' characters diagonally, and positions 'O' characters based on whether N is even or odd. 
+The final step prints the grid, ensuring it is neatly structured with vertical and horizontal dividers. 
 This algorithm is versatile and can be applied to grids of any size, not just limited to 10x10, ensuring the grid is generated and displayed accurately for any input N.
-
 */
 
 #include <iostream>
@@ -30,13 +34,13 @@ void generateGrid(int N) {
         }
     }
 
-    // Place 'x' on the grid
+    // Place 'X' on the grid
     for (int i = 0; i <= N && i < MAX_GRID_SIZE; i++) {
         array[i][i] = 'x';
         array[i + 1][i] = 'x';
     }
 
-    // Place 'o' on the grid based on N
+    // Place 'O' on the grid based on N
     if (N % 2 == 0) {
         if (N + 1 < MAX_GRID_SIZE) {
             array[N + 1][N + 1] = 'o';
@@ -48,13 +52,25 @@ void generateGrid(int N) {
         }
     }
 
-    // print output (grid)
+    // Print the grid with separators
     for (int i = MAX_GRID_SIZE - 1; i >= 0; i--) {
         for (int j = 0; j < MAX_GRID_SIZE; j++) {
-            cout << array[i][j];
+            cout << "+---"; // Horizontal divider
         }
-        cout << endl;
+        cout << "+" << endl;
+
+        for (int j = 0; j < MAX_GRID_SIZE; j++) {
+            cout << "| " << array[i][j] << " ";  // Vertical Divider
+        }
+        cout << "|" << endl;
     }
+
+    // Print the final horizontal divider
+    for (int j = 0; j < MAX_GRID_SIZE; j++) {
+        cout << "+---";
+    }
+    cout << "+" << endl;
+    cout << "N=" << N << endl;
 }
 
 int main(int argc, char** argv) {

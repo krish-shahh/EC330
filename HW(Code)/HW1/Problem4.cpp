@@ -1,9 +1,5 @@
 // Krish Shah, U75802512, kshah26@bu.edu
 
-/* Course of Action:
-    - 
-*/
-
 #include <iostream>
 #include <stack>
 #include <string>
