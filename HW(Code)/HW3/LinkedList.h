@@ -53,7 +53,7 @@ void Node<T>::printData()
 template <class T>
 void Node<T>::print()
 {
-    cout << " * " << data << ": [addr: " << this << " next: " << this->next << " prev: " << this->prev << " up: " << this->up << " down: " << this->down << "]  ";
+    cout << data << ": [address: " << this << ", next node: " << this->next << ", prev node: " << this->prev << ", up: " << this->up << ", down: " << this->down << "]";
 }
 
 template <class T>
@@ -106,6 +106,16 @@ Node<T>* LinkedList<T>::insert(Node<T>* location, T data){
     }
 
     if(location->data == data){
+        return nullptr;
+    }
+
+    if(data <= location->data){
+        cout << "Error: Inserting data in wrong order." << endl;
+        return nullptr;
+    }
+
+    if(location->next != nullptr && data >= location->next->data){
+        cout << "Error: Inserting data in wrong order." << endl;
         return nullptr;
     }
 
