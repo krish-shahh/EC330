@@ -15,6 +15,7 @@ Updated by Krish Shah, U75802512, kshah26@bu.edu
 #include <functional>
 #include <algorithm>
 #include <fstream>
+#include <cmath>
 
 using namespace std;
 
